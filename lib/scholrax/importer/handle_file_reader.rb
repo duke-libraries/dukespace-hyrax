@@ -7,10 +7,8 @@ module Scholrax::Importer
       @handle_file_path = handle_file_path
     end
 
-    def call
-      if File.file?(handle_file_path)
-        handle_id = File.readlines(handle_file_path).first.chomp
-      end
+    def handle_id
+      File.readlines(handle_file_path).first.chomp if File.file?(handle_file_path)
     end
 
   end
