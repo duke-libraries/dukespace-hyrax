@@ -8,7 +8,7 @@ module Scholrax::Importer
 
       subject { described_class.new(handle_file_path) }
       it "returns the expected handle" do
-        expect(subject.call).to eq ('12345/98765')
+        expect(subject.handle_id).to eq ('12345/98765')
       end
     end
 

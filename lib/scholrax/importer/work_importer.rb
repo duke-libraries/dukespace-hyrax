@@ -36,7 +36,7 @@ module Scholrax::Importer
 
     def work_handle
       handle_file_reader = HandleFileReader.new(File.join(export_path, 'handle'))
-      handle_file_reader.call
+      handle_file_reader.handle_id
     end
 
     def metadata_attributes
