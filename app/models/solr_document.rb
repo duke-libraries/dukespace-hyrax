@@ -27,15 +27,15 @@ class SolrDocument
   use_extension(Blacklight::Document::DublinCore)
 
   field_semantics.merge!(
-    creator:     'creator_tesim',
-    date:        'date_created_tesim',
-    description: 'description_tesim',
-    identifier:  'identifier_tesim',
-    language:    'language_tesim',
-    rights:      'rights_statement_tesim',
-    subject:     'subject_tesim',
-    title:       'title_tesim',
-    type:        'resource_type_tesim')
+    creator:     solr_name('creator', :stored_searchable),
+    date:        solr_name('date_created', :stored_searchable),
+    description: solr_name('description', :stored_searchable),
+    identifier:  solr_name('identifier', :stored_searchable),
+    language:    solr_name('language', :stored_searchable),
+    rights:      solr_name('rights_statement', :stored_searchable),
+    subject:     solr_name('subject', :stored_searchable),
+    title:       solr_name('title', :stored_searchable),
+    type:        solr_name('resource_type', :stored_searchable))
 
   # Do content negotiation for AF models.
 
